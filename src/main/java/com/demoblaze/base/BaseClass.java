@@ -6,12 +6,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.io.FileHandler;
-
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Set;
 
 public class BaseClass {
     public static WebDriver driver;
@@ -34,6 +32,9 @@ public class BaseClass {
         }
     }
 
+
+
+
     protected static void launchBrowser(String browserName) {
         try {
             if (browserName.equalsIgnoreCase("Crome")) {
@@ -43,12 +44,9 @@ public class BaseClass {
             } else if (browserName.equalsIgnoreCase("edge")) {
                 driver = new EdgeDriver();
             }
-
         } catch (Exception e) {
             Assert.fail("Error while launching browser");
-
         }
-
     }
 
     protected static void launchUrl(String url) {
@@ -71,11 +69,12 @@ public class BaseClass {
     }
 
 
+
+
     protected static String takeScreenshot() throws IOException {
         Date date = new Date();
         SimpleDateFormat sdf = new SimpleDateFormat("EEE_MMM_dd_HH_mm_ss_z_yyyy");
         String strDate = sdf.format(date);
-
         TakesScreenshot ts = (TakesScreenshot) driver;
         File source = ts.getScreenshotAs(OutputType.FILE);
         try {
@@ -90,12 +89,7 @@ public class BaseClass {
     protected static void alert()
     {
         Alert alert = driver.switchTo().alert();
-
         System.out.println("Alert Message: " + alert.getText());
-
         alert.accept();
     }
-
-
-
 }

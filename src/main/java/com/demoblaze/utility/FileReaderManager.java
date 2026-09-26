@@ -1,7 +1,6 @@
 package com.demoblaze.utility;
 
 import org.junit.Assert;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -25,11 +24,11 @@ public class FileReaderManager
             Assert.fail("IO EXCETION : FAILED DURING FILE LOADING");
         }
     }
+
     public static String getDataProperty(String value)
     {
         setupProperty();
         String property = properties.getProperty(value);
         return property;
     }
-
 }

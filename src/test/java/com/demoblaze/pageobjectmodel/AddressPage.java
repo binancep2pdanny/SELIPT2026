@@ -34,14 +34,11 @@ public class AddressPage extends BaseClass implements AddressPageInterfaceElemen
 
     @FindBy(xpath = success)
     public static WebElement successmessage;
-
     @FindBy(xpath = order)
     public static WebElement ordermessage;
 
     @FindBy(xpath = ok)
     public static WebElement okbutton;
-
-
 
     public AddressPage()
     {
@@ -64,6 +61,5 @@ public class AddressPage extends BaseClass implements AddressPageInterfaceElemen
         getText(ordermessage);
         takeScreenshot();
         clickOnElement(okbutton);
-
     }
 }
